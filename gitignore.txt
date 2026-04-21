@@ -2,5 +2,4 @@ __pycache__/
 .pytest_cache/
 selenium_env/
 .idea/
-idea/
 pages/__pycache__/
