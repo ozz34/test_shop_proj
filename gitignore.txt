@@ -2,5 +2,5 @@ __pycache__/
 .pytest_cache/
 selenium_env/
 .idea/
-.idea/workspace.xml
+idea/
 pages/__pycache__/
