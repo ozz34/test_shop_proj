@@ -2,8 +2,8 @@ from .base_page import BasePage
 from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
-    def should_be_button_active(self):
-        assert self.is_element_present(*ProductPageLocators.BUCKET_BUTTON), "Add bucket button is not presented"
+    def should_be_button_bucket_active(self):
+        assert self.is_element_present(*ProductPageLocators.ADD_BUCKET_BUTTON), "Add bucket button is not presented"
 
     def check_product_param(self):
         product_name = self.is_element_visible(*ProductPageLocators.PRODUCT_NAME).text
@@ -11,7 +11,7 @@ class ProductPage(BasePage):
         return (product_name, product_price)
 
     def add_product_to_basket(self):
-        add_button = self.is_element_clickable(*ProductPageLocators.BUCKET_BUTTON)
+        add_button = self.is_element_clickable(*ProductPageLocators.ADD_BUCKET_BUTTON)
         add_button.click()
 
     def check_success_add_to_basket(self, product):

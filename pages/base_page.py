@@ -3,7 +3,6 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
-
 import math
 
 class BasePage():
@@ -72,3 +71,11 @@ class BasePage():
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
+    def open_bucket(self):
+        bucket = self.is_element_clickable(*BasePageLocators.BUCKET_LINK)
+        bucket.click()
+
+    def check_empty_bucket_message(self):
+        assert self.is_element_visible(*BasePageLocators.BUCKET_EMPTY_MESSAGE).text.__contains__("Your basket is empty."), \
+            "Корзина не пуста"
+        print("Корзина пуста")
