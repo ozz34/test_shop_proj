@@ -4,4 +4,4 @@ Create and activate environment: python3 -m venv sel_env -->
 install requirements: pip install -r requirements.txt -->  
 launch command: pytest -v --tb=line --language=en -m need_review.  
 To launch test's USE VPN.  
-If catch CONNECTION ERROR - repeat test's and check VPN CONNECTION.
+If catch CONNECTION OR EOF ERROR - repeat test's and check VPN CONNECTION.
