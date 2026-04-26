@@ -30,7 +30,7 @@ class BasePage():
 
     def is_element_clickable(self, how, what, timeout=4):
         try:
-           element =  WebDriverWait(self.browser, timeout).until(EC.element_to_be_clickable((how, what)))
+            element =  WebDriverWait(self.browser, timeout).until(EC.element_to_be_clickable((how, what)))
         except TimeoutException:
             return False
         return element
@@ -79,3 +79,7 @@ class BasePage():
         assert self.is_element_visible(*BasePageLocators.BUCKET_EMPTY_MESSAGE).text.__contains__("Your basket is empty."), \
             "Корзина не пуста"
         print("Корзина пуста")
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

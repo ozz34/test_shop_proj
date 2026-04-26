@@ -12,3 +12,10 @@ class BasePageLocators():
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BUCKET_LINK = (By.XPATH, "//span[@class = 'btn-group']")
     BUCKET_EMPTY_MESSAGE = (By.CSS_SELECTOR, "div[id = 'content_inner'] p")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+class LoginPageLocators():
+    REGISTRATION_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTRATION_PASSWORD1 = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTRATION_PASSWORD2 = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTRATION_BUTTON = (By.NAME, "registration_submit")
